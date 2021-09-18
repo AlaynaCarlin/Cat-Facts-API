@@ -7,6 +7,9 @@ const endPoint3 = 'pokemon-habitat/1/';
 const endPoint4 = 'egg-group/1/';
 const endPoint5 = 'egg-group/2/';
 const endPoint6 = 'egg-group/3/';
+const endPoint7 = 'pokemon-shape/2/';
+const endPoint8 = 'pokemon-shape/3/';
+const endPoint9 = 'pokemon-color/5/';//8
 
 //*html variables
 const shapeBtn = document.querySelector('#ball');
@@ -15,6 +18,9 @@ const habitatBtn = document.querySelector('#cave');
 const monsterBtn = document.querySelector('#MonsterEgg');
 const waterBtn = document.querySelector('#waterEgg');
 const bugBtn = document.querySelector('#bugEgg');
+const squiggleBtn = document.querySelector('#squiggle');
+const fishBtn = document.querySelector('#fish');
+const greenBtn = document.querySelector('#green');
 
 //* event listeners
 shapeBtn.addEventListener('click', FetchShape);
@@ -23,8 +29,12 @@ habitatBtn.addEventListener('click', FetchHabitat);
 monsterBtn.addEventListener('click', FetchEgg);
 waterBtn.addEventListener('click', fetchEggWater);
 bugBtn.addEventListener('click', fetchEggBug);
+squiggleBtn.addEventListener('click', FetchSquiggle);
+fishBtn.addEventListener('click', FetchFish);
+greenBtn.addEventListener('click', FetchGreen);
 
 //! shape
+    //*ball
 function FetchShape (e) {
     fetch (baseURL + endPoint1) 
         .then(res => res.json())
@@ -43,7 +53,43 @@ function displayShape (shape) {
     shapeImg.src = "./assets/shellder.png";//*shellder img
 }
 
+//* Squiggle
+function FetchSquiggle (e) {
+    fetch (baseURL + endPoint7)
+        .then(res => res.json())
+        .then(function(squiggle) {
+            console.log(squiggle);
+            displaySquiggle(squiggle.pokemon_species[0].name);
+        })
+        .catch(err => console.log(err));
+}
+
+function displaySquiggle (shape) {
+    let squigglePara = document.getElementById('squigglePok');
+    squigglePara.innerText = shape;
+    let squiggleImg = document.getElementById('squiggleImg');
+    squiggleImg.src = "./assets/ekans.png";
+}
+
+//* Fish
+function FetchFish (e) { 
+    fetch (baseURL + endPoint8)
+        .then(res => res.json())
+        .then(function (fish) {
+            // console.log(fish);
+            displayFish(fish.pokemon_species[1].name);
+        })
+} 
+
+function displayFish (shape) {
+    let fishPara = document.getElementById('fishPok');
+    fishPara.innerText = shape;
+    let fishImg = document.getElementById('fishImg');
+    fishImg.src = "./assets/seel.png";
+}
+
 //! color
+    //* Blue
 function FetchColor (e) {
      fetch (baseURL + endPoint2)
         .then(res => res.json())
@@ -60,6 +106,24 @@ function displayColor (color) {
     colorPara.innerText = color;//* color
     let colorImg = document.getElementById('blueImg');
     colorImg.src = "./assets/squirtle.jpg";//* squirtle img
+}
+
+    //* Green
+function FetchGreen (e) {  
+    fetch (baseURL + endPoint9)
+        .then (res => res.json())
+        .then (function (color) {
+            console.log(color);
+            displayGreen(color.pokemon_species[8].name);
+        }) 
+        .catch(err => console.log(err));
+}
+
+function displayGreen (green) {
+    let greenPara = document.getElementById('greenPok');
+    greenPara.innerText = green;
+    let greenImg = document.getElementById('greenImg');
+    greenImg.src = "./assets/chikorita.png";
 }
 
 //! habitat
@@ -118,7 +182,7 @@ function displayWater (water) {
     waterImg.src = "./assets/psyduck.png";
 }
 
-    //*
+    //* Bug
 function fetchEggBug (e) {
     fetch(baseURL + endPoint6)
      .then(res => res.json())
@@ -135,3 +199,8 @@ function displayBug (bug) {
     let bugImg = document.getElementById('bugImg');
     bugImg.src = "./assets/caterpie.png";
 }
+
+//! natures
+    //* Bold
+    
+        

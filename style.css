@@ -47,6 +47,17 @@ h1 {
     margin: 50px;
 }
 
+.squiggleDiv {
+    margin: 50px;
+}
+
+.fishDiv {
+    margin: 50px;
+}
+
+.greenDiv {
+    margin: 50px;
+}
 
 /* Button styling */
 #ball {
@@ -109,6 +120,36 @@ h1 {
     font-family:cursive;
 }
 
+#squiggle {
+    margin:50px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:cursive;
+}
+
+#fish {
+    margin:50px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:cursive;
+}
+
+#green {
+    margin:50px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:cursive;
+}
+
 /* Name styling */
 #ballPok {
     text-align: center;
@@ -146,6 +187,24 @@ h1 {
     font-family:cursive;
 }
 
+#squigglePok {
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+}
+
+#fishPok {
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+}
+
+#greenPok {
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+}
+
 /* image styling */
 #ballImg{
     width:400px;
@@ -173,6 +232,21 @@ h1 {
 }
 
 #bugImg {
+    width: 400px;
+    height: auto;
+}
+
+#squiggleImg {
+    width: 400px;
+    height: auto;
+}
+
+#fishImg {
+    width: 400px;
+    height: auto;
+}
+
+#greenImg {
     width: 400px;
     height: auto;
 }
