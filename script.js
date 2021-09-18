@@ -3,17 +3,26 @@
 const baseURL = 'https://pokeapi.co/api/v2/';
 const endPoint1 = 'pokemon-shape/1/';
 const endPoint2 = 'pokemon-color/2/';
-const endPoint3 = 'pokemon-habitat/1/'
+const endPoint3 = 'pokemon-habitat/1/';
+const endPoint4 = 'egg-group/1/';
+const endPoint5 = 'egg-group/2/';
+const endPoint6 = 'egg-group/3/';
 
 //*html variables
 const shapeBtn = document.querySelector('#ball');
 const colorBtn = document.querySelector('#blue');
 const habitatBtn = document.querySelector('#cave');
+const monsterBtn = document.querySelector('#MonsterEgg');
+const waterBtn = document.querySelector('#waterEgg');
+const bugBtn = document.querySelector('#bugEgg');
 
 //* event listeners
 shapeBtn.addEventListener('click', FetchShape);
 colorBtn.addEventListener('click', FetchColor);
 habitatBtn.addEventListener('click', FetchHabitat);
+monsterBtn.addEventListener('click', FetchEgg);
+waterBtn.addEventListener('click', fetchEggWater);
+bugBtn.addEventListener('click', fetchEggBug);
 
 //! shape
 function FetchShape (e) {
@@ -72,3 +81,57 @@ function displayHabitat (habitat) {
     habitatImg.src = "./assets/zubat.png";
 }
 
+//! Eggs 
+    //*monster
+function FetchEgg (e) {
+    fetch (baseURL + endPoint4)
+        .then(res => res.json())
+        .then(function (egg) {
+            //console.log(egg);
+            displayMonster(egg.pokemon_species[0].name);
+        })
+        .catch(err => console.log(err));
+}
+
+function displayMonster (monster) {
+    let monsterPara = document.getElementById('monsterPok');
+    monsterPara.innerText = monster;
+    let monsterImg = document.getElementById('monsterImg');
+    monsterImg.src = "./assets/bulbasaur.jpg";
+}
+
+    //*water
+function fetchEggWater (water) {
+    fetch (baseURL + endPoint5)
+        .then(res => res.json())
+        .then(function (egg) {
+            //console.log(egg);
+            displayWater(egg.pokemon_species[3].name);
+        })
+        .catch(err => console.log(err));
+}
+
+function displayWater (water) {
+    let waterPara = document.getElementById('waterPok');
+    waterPara.innerText = water;
+    let waterImg = document.getElementById('waterImg');
+    waterImg.src = "./assets/psyduck.png";
+}
+
+    //*
+function fetchEggBug (e) {
+    fetch(baseURL + endPoint6)
+     .then(res => res.json())
+     .then(function (egg) {
+         //console.log(egg);
+         displayBug(egg.pokemon_species[0].name);
+     })
+     .catch(err => console.log(err));
+    }
+
+function displayBug (bug) {
+    let bugPara = document.getElementById('bugPok');
+    bugPara.innerText = bug;
+    let bugImg = document.getElementById('bugImg');
+    bugImg.src = "./assets/caterpie.png";
+}

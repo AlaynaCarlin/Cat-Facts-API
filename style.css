@@ -16,16 +16,41 @@ h1 {
     font-size: 40px;
 }
 
+/* div styling */
 .wrapper {
+    margin:10px;
     display: flex;
-    flex-direction: row;
-    
+    flex-wrap: wrap;
 }
+
+.ballDiv{
+    margin:50px;
+}
+
+.caveDiv {
+    margin: 50px;
+}
+
+.blueDiv {
+    margin: 50px;
+}
+
+.monsterDiv{
+    margin: 50px;
+}
+
+.waterDiv {
+    margin: 50px;
+}
+
+.bugDiv {
+    margin: 50px;
+}
+
+
 /* Button styling */
 #ball {
-    position: relative;
-    left: 10%;
-    margin: 5px;
+    margin: 50px;
     padding: 10px;
     background-color: rgb(204, 204, 204);
     border: none;
@@ -35,9 +60,7 @@ h1 {
 }
 
 #cave {
-    position: relative;
-    left: 76%;
-    margin: 5px;
+    margin: 50px;
     padding: 10px;
     background-color: rgb(204, 204, 204);
     border: none;
@@ -47,9 +70,37 @@ h1 {
 }
 
 #blue {
-    position: relative;
-    left: 103%;
-    margin:5px;
+    margin:50px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:cursive;
+}
+
+#MonsterEgg{
+    margin:50px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:cursive;
+}
+
+#waterEgg{
+    margin:50px;
+    padding: 10px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family:cursive;
+}
+
+#bugEgg {
+    margin:50px;
     padding: 10px;
     background-color: rgb(204, 204, 204);
     border: none;
@@ -60,24 +111,36 @@ h1 {
 
 /* Name styling */
 #ballPok {
-    position: relative;
-    left: 10%;
     text-align: center;
     font-size: 30px;
     font-family:cursive;
 }
 
 #cavePok {
-    position: relative;
-    left: 60%;
     text-align: center;
     font-size: 30px;
     font-family:cursive;
 }
 
 #bluePok {
-    position: relative;
-    left: 83%;
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+}
+
+#monsterPok {
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+}
+
+#waterPok {
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+}
+
+#bugPok {
     text-align: center;
     font-size: 30px;
     font-family:cursive;
@@ -85,23 +148,31 @@ h1 {
 
 /* image styling */
 #ballImg{
-    position: relative;
-    left: 10%;
-    width:300px;
+    width:400px;
     height:auto;
 }
 
 #caveImg{
-    position: relative;
-    left: 60%;
     width: 400px;
     height: auto;
 }
 
 #blueImg{
-    position: relative;
-    left: 90%;
     width: 400px;
     height: auto;
 }
 
+#monsterImg {
+    width: 450px;
+    height: auto;
+}
+
+#waterImg {
+    width: 400px;
+    height: auto;
+}
+
+#bugImg {
+    width: 400px;
+    height: auto;
+}
