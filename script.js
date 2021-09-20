@@ -77,7 +77,7 @@ function FetchFish (e) {
         .then(res => res.json())
         .then(function (fish) {
             // console.log(fish);
-            displayFish(fish.pokemon_species[1].name);
+            displayFish(fish.pokemon_species[0].name);
         })
 } 
 
