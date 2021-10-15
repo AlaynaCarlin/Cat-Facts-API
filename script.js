@@ -143,17 +143,20 @@ function FetchGreen (e) {
     fetch (baseURL + endPoint9)
         .then (res => res.json())
         .then (function (color) {
-            console.log(color);
-            displayGreen(color.pokemon_species[8].name);
+            // console.log(color);
+            displayGreen(color);
         }) 
         .catch(err => console.log(err));
 }
 
+let gree = ["", "", "", "", "", "", "", "", "./assets/chikorita.png", "./assets/spinarak.png", "./assets/natu.png"];
+
 function displayGreen (green) {
+    let rando = Math.floor(Math.random() * (11 - 8) + 8);
     let greenPara = document.getElementById('greenPok');
-    greenPara.innerText = green;
+    greenPara.innerText = green.pokemon_species[rando].name;
     let greenImg = document.getElementById('greenImg');
-    greenImg.src = "./assets/chikorita.png";
+    greenImg.src = gree[rando];
 }
 
 //! habitat
