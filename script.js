@@ -121,18 +121,21 @@ function FetchColor (e) {
      fetch (baseURL + endPoint2)
         .then(res => res.json())
         .then(function (color) {
-            //console.log(color);
-            displayColor(color.pokemon_species[0].name);
+            // console.log(color);
+            displayColor(color);
         })
         .catch(err => console.log(err));
 }
+
+let col = ["./assets/squirtle.jpg", "./assets/nidoran.png", "./assets/oddish.png", "./assets/poliwag.png", "./assets/tantacool.jpg"];
    
 function displayColor (color) {
     // console.log(color);
+    let rando = Math.floor(Math.random() * 5);
     let colorPara = document.getElementById('bluePok');
-    colorPara.innerText = color;//* color
+    colorPara.innerText = color.pokemon_species[rando].name;//* color
     let colorImg = document.getElementById('blueImg');
-    colorImg.src = "./assets/squirtle.jpg";//* squirtle img
+    colorImg.src = col[rando];//* squirtle img
 }
 
     //* Green
