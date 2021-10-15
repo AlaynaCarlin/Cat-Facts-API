@@ -164,21 +164,24 @@ function FetchHabitat (e) {
     fetch (baseURL + endPoint3)
         .then(res => res.json())
         .then(function (habitat) {
-            //console.log(habitat);
-            displayHabitat(habitat.pokemon_species[0].name);
+            // console.log(habitat);
+            displayHabitat(habitat);
         })
         .catch(err => console.log(err));
 }
 
+let cave = ["./assets/zubat.png", "./assets/diglett.png", "./assets/zubat.png", "./assets/diglett.png", "./assets/Gastly.png", "./assets/onix.jpg"];
+
 function displayHabitat (habitat) {
     //console.log(habitat);
+    let rando = Math.floor(Math.random() * 6)
     let habitatPara = document.getElementById('cavePok');
-    habitatPara.innerText = habitat;
+    habitatPara.innerText = habitat.pokemon_species[rando].name;
     let habitatImg = document.getElementById('caveImg');
-    habitatImg.src = "./assets/zubat.png";
+    habitatImg.src = cave[rando];
 }
 
-//! Eggs 
+//! Eggs ******  Rando Eggs  ************
     //*monster
 function FetchEgg (e) {
     fetch (baseURL + endPoint4)
