@@ -33,24 +33,45 @@ squiggleBtn.addEventListener('click', FetchSquiggle);
 fishBtn.addEventListener('click', FetchFish);
 greenBtn.addEventListener('click', FetchGreen);
 
+// ! Rando num func ==== inefficient
+// function randomInt (max) {
+//     return Math.floor(Math.random() * max);
+//    }
+
 //! shape
     //*ball
+
 function FetchShape (e) {
     fetch (baseURL + endPoint1) 
         .then(res => res.json())
         .then(function (shape) {
-            //console.log(shape);
-            displayShape (shape.pokemon_species[0].name);
+            // console.log(shape);
+            displayShape (shape);
         })
         .catch(err => console.log(err));
 }
 
+let ballArray = ["./assets/shellder.png", "./assets/Gastly.png", "./assets/voltorb.png", "./assets/koffing.png"];
+
 function displayShape (shape) {
     // console.log(shape);
+    let rando = Math.floor(Math.random() * 4);
     let shapePara = document.getElementById('ballPok');
-    shapePara.innerText = shape;//*name
+    shapePara.innerText = shape.pokemon_species[rando].name;//*name
     let shapeImg = document.getElementById('ballImg');
-    shapeImg.src = "./assets/shellder.png";//*shellder img
+    shapeImg.src = ballArray[rando];
+    // ! does not work
+    // let current = shape.pokemon_species.indexOf(pokemon_species);
+    // if (current === 0) {
+    //     shapeImg.src = "./assets/shellder.png";
+    // } else if (current === 1) {
+    //     shapeImg.src = "./assets/Gastly.png";
+    // } else if (current === 3) {
+    //     shapeImg.src = "./assets/koffing";
+    // } else {
+    //     shapeImg.src = "./assets/voltorb.png";
+    // }
+    
 }
 
 //* Squiggle
@@ -58,17 +79,20 @@ function FetchSquiggle (e) {
     fetch (baseURL + endPoint7)
         .then(res => res.json())
         .then(function(squiggle) {
-            console.log(squiggle);
-            displaySquiggle(squiggle.pokemon_species[0].name);
+            // console.log(squiggle);
+            displaySquiggle(squiggle);
         })
         .catch(err => console.log(err));
 }
 
+let squig = ["./assets/ekans.png", "./assets/caterpie.png", "./assets/kakuna.jpg", "./assets/ekans.png", "./assets/onix.jpg"];
+
 function displaySquiggle (shape) {
+    let rando = Math.floor(Math.random() * 5);
     let squigglePara = document.getElementById('squigglePok');
-    squigglePara.innerText = shape;
+    squigglePara.innerText = shape.pokemon_species[rando].name;
     let squiggleImg = document.getElementById('squiggleImg');
-    squiggleImg.src = "./assets/ekans.png";
+    squiggleImg.src = squig[rando];
 }
 
 //* Fish
@@ -77,15 +101,18 @@ function FetchFish (e) {
         .then(res => res.json())
         .then(function (fish) {
             // console.log(fish);
-            displayFish(fish.pokemon_species[0].name);
+            displayFish(fish);
         })
 } 
 
+let fish = ["./assets/seel.png", "./assets/goldeen.png", "./assets/magikarp.png", "./assets/lapras.png"];
+
 function displayFish (shape) {
+    let rando = Math.floor(Math.random() * 4);
     let fishPara = document.getElementById('fishPok');
-    fishPara.innerText = shape;
+    fishPara.innerText = shape.pokemon_species[rando].name;
     let fishImg = document.getElementById('fishImg');
-    fishImg.src = "./assets/seel.png";
+    fishImg.src = fish[rando];
 }
 
 //! color
