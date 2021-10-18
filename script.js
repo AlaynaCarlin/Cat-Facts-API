@@ -187,17 +187,20 @@ function FetchEgg (e) {
     fetch (baseURL + endPoint4)
         .then(res => res.json())
         .then(function (egg) {
-            //console.log(egg);
-            displayMonster(egg.pokemon_species[0].name);
+            // console.log(egg);
+            displayMonster(egg);
         })
         .catch(err => console.log(err));
 }
 
+let mons = ["./assets/bulbasaur.jpg", "./assets/bulbasaur.jpg", "./assets/bulbasaur.jpg", "./assets/charmander.png", "./assets/charmander.png", "./assets/charmander.png", "./assets/squirtle.jpg", "./assets/squirtle.jpg"];
+
 function displayMonster (monster) {
+    let rando = Math.floor(Math.random() * 8);
     let monsterPara = document.getElementById('monsterPok');
-    monsterPara.innerText = monster;
+    monsterPara.innerText = monster.pokemon_species[rando].name;
     let monsterImg = document.getElementById('monsterImg');
-    monsterImg.src = "./assets/bulbasaur.jpg";
+    monsterImg.src = mons[rando];
 }
 
     //*water
