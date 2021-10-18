@@ -208,17 +208,20 @@ function fetchEggWater (water) {
     fetch (baseURL + endPoint5)
         .then(res => res.json())
         .then(function (egg) {
-            //console.log(egg);
-            displayWater(egg.pokemon_species[3].name);
+            // console.log(egg);
+            displayWater(egg);
         })
         .catch(err => console.log(err));
 }
 
+let wat = ["./assets/squirtle.jpg", "./assets/squirtle.jpg", "./assets/squirtle.jpg", "./assets/psyduck.png", "./assets/psyduck.png", "./assets/poliwag.png", "./assets/poliwag.png", "./assets/poliwag.png", "./assets/slowpoke.png", "./assets/slowpoke.png", "./assets/seel.png"];
+
 function displayWater (water) {
+    let rando = Math.floor(Math.random() * 11);
     let waterPara = document.getElementById('waterPok');
-    waterPara.innerText = water;
+    waterPara.innerText = water.pokemon_species[rando].name;
     let waterImg = document.getElementById('waterImg');
-    waterImg.src = "./assets/psyduck.png";
+    waterImg.src = wat [rando];
 }
 
     //* Bug
