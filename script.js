@@ -229,17 +229,20 @@ function fetchEggBug (e) {
     fetch(baseURL + endPoint6)
      .then(res => res.json())
      .then(function (egg) {
-         //console.log(egg);
-         displayBug(egg.pokemon_species[0].name);
+        //  console.log(egg);
+         displayBug(egg);
      })
      .catch(err => console.log(err));
     }
 
+let bug1 = ["./assets/caterpie.png", "./assets/caterpie.png", "./assets/caterpie.png", "./assets/kakuna.jpg", "./assets/kakuna.jpg", "./assets/kakuna.jpg", "./assets/paras.png",  "./assets/paras.png", "./assets/venonat.jpg", "./assets/venonat.jpg"];
+
 function displayBug (bug) {
+    let rando = Math.floor(Math.random() * 10);
     let bugPara = document.getElementById('bugPok');
-    bugPara.innerText = bug;
+    bugPara.innerText = bug.pokemon_species[rando].name;
     let bugImg = document.getElementById('bugImg');
-    bugImg.src = "./assets/caterpie.png";
+    bugImg.src = bug1[rando];
 }
 
 //! natures
